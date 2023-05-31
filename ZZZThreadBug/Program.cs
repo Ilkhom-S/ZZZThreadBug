@@ -31,7 +31,6 @@ public class Program
         var sQueryDiffCulture = db.SampleTemporals.TemporalAsOf(DateTime.UtcNow);
         Console.WriteLine(sQueryDiffCulture.Count());
 
-        db.SaveChanges();
         // Now querying data with zzz extensions, throws datetime error
         var zQueryDiffCulture = db.SampleTemporals.TemporalTableAsOf(DateTime.UtcNow);
         Console.WriteLine("Should show count of rows, but throws error: {0}", zQueryDiffCulture.Count());
